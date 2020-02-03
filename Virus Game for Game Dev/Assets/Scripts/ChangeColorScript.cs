@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class ChangeColorScript : MonoBehaviour
 {
-    void Start() 
-    {
-        Debug.Log("START!");
-    }
+    //public GameObject collideWith;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collideWith)
     {
-        GetComponent<Renderer>().material.color = new Color(0.5f,1,0.5f);
-        Debug.Log("It Works!");
+        if (collideWith.gameObject.tag == "Player") {
+            GetComponent<Renderer>().material.color = new Color(0.5f,1,0.5f);
+            Debug.Log("It Works!");
+        }
     }
 }
