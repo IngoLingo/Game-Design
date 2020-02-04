@@ -4,22 +4,40 @@ using UnityEngine;
 
 public class RobotControlerScript : MonoBehaviour
 {
-	[SerializeField]
-	private Rigidbody playerBody;
-	private Vector3 inputVector;
-	public float playerSpeed;
+	//public GameObject objectMoved;
+    public Create_FloatVariable playerSpeed;
 
-	void Start () 
-	{
-		playerBody = GetComponent<Rigidbody>();
-	}
-
-    private void OnTriggerStay(Collider collideWith)
+    private void OnTriggerStay(Collider otherObject)
     {
-        if (collideWith.gameObject.tag == "Player") 
+        if (otherObject.gameObject.tag == "Player")
         {
-            inputVector = new Vector3(Input.GetAxisRaw("Horizontal") * playerSpeed, 0, Input.GetAxisRaw("Vertical") * playerSpeed);
-            playerBody.velocity = inputVector;
+            //Forward 
+            if(Input.GetKey(KeyCode.W)) 
+            {
+                //if
+                    transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime); 
+            }
+
+            //Back 
+            if(Input.GetKey(KeyCode.S)) 
+            {
+                //if
+                    transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime); 
+            }
+
+            //Left 
+            if(Input.GetKey(KeyCode.A)) 
+            {
+                //if
+                    transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
+            }
+
+            //Right 
+            if(Input.GetKey(KeyCode.D)) 
+            {
+                //if
+                    transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
+            }
         }
     }
 }
