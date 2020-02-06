@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5072053012301561061}
   - component: {fileID: 5072053012301561082}
   - component: {fileID: 6654159240672001703}
+  - component: {fileID: 7420825808148141708}
   m_Layer: 0
   m_Name: Player_obj
   m_TagString: Player
@@ -4778,8 +4779,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Size: {x: 0.5, y: 1.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7420825808148141708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072053012301561069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43aac943ebf91154cacfc04f3781087a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}
 --- !u!1 &5128669482522174706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +4884,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1487760143109238174
 MonoBehaviour:
@@ -4885,8 +4899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
+  myState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  objectMoved: {fileID: 5072053012301561069}
 --- !u!1 &7543024772450301484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,7 +4991,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1131900164188928149
 MonoBehaviour:
@@ -4992,8 +5006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
+  myState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  objectMoved: {fileID: 5072053012301561069}
 --- !u!1 &7725883327784501874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,7 +5021,6 @@ GameObject:
   - component: {fileID: 2169366654774525238}
   - component: {fileID: 2821233846030758640}
   - component: {fileID: 6875885325620267483}
-  - component: {fileID: 7680683758297846128}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5085,7 +5098,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6875885325620267483
 MonoBehaviour:
@@ -5100,23 +5113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  myState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  objectMoved: {fileID: 5072053012301561069}
---- !u!114 &7680683758297846128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7725883327784501874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0286638837d97814f8dac61da5f399c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 0
-  playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  objectMoved: {fileID: 5072053012301561069}
 --- !u!1 &7939689758301360035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5207,7 +5205,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3104794953612232008
 MonoBehaviour:
@@ -5222,5 +5220,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
+  myState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  objectMoved: {fileID: 5072053012301561069}

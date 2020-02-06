@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 5346876709211289622}
   - component: {fileID: 4261375301787937214}
   - component: {fileID: 4261375301787937212}
-  - component: {fileID: 5793566243574960539}
   m_Layer: 0
   m_Name: Robot_obj
-  m_TagString: InfectableObjectCollision
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,19 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134cdc1888b37c24a96ef4a4d2ff7c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5793566243574960539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4261375301787937211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df961dbff6f25044fbb75bb91f6ec864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
 --- !u!1 &7649458975704263183
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,9 +132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2752821111173562295}
   - component: {fileID: 7891869057872402981}
+  - component: {fileID: 6261132882890827874}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: InfectableObjectCollision
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,3 +167,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6261132882890827874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458975704263183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df961dbff6f25044fbb75bb91f6ec864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}

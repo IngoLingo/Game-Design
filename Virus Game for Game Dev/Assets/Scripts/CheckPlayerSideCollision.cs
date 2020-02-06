@@ -5,53 +5,103 @@ using UnityEngine;
 public class CheckPlayerSideCollision : MonoBehaviour
 {
     public float direction; //0 = forward, 1 = back, 2 = left, 3 = right
+    public Create_FloatVariable myState; //0 = paused, 1 = infecting objects, 2 = infecting robots, 3 = death (more to add)
     public Create_FloatVariable playerSpeed;
-    public GameObject objectMoved;
-    
-    void Start() 
-    {
-        //var objectMoved = transform.parent.gameObject;
-    }
-    //GameObject objectMoved = transform.gameObject;
 
     //Check Triggers
     private void OnTriggerStay(Collider otherObject)
 	{
-        if (otherObject.gameObject.tag == "InfectableObjectCollision")
+        switch (myState.value)
         {
-            switch (direction)
-            {
-                case 0:  //Forward 
-                    if(Input.GetKey(KeyCode.W)) 
-                        {
-                                objectMoved.transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime);
-                        }
-                    break;
+            //paused
+            case 0:
+            break;
 
-                case 1:  //Back 
-                    if(Input.GetKey(KeyCode.S)) 
-                        {
-                                objectMoved.transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime);
-                        }
-                    break;
-                    
-                case 2:  //Left 
-                    if(Input.GetKey(KeyCode.A)) 
-                        {
-                                objectMoved.transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime);
-                        }
-                    break;
+            //infecting objects
+            case 1:
+                if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                {
+                    switch (direction)
+                    {
+                        case 0:  //Forward 
+                            if(Input.GetKey(KeyCode.W)) 
+                                {
+                                    transform.parent.gameObject.transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime);
+                                }
+                            break;
 
-                case 3:  //Right 
-                    if(Input.GetKey(KeyCode.D)) 
-                        {
-                                objectMoved.transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime);
-                        }
-                    break;
-                    
-                default: //Nothing
-                    break;
-            }
+                        case 1:  //Back 
+                            if(Input.GetKey(KeyCode.S)) 
+                                {
+                                    transform.parent.gameObject.transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime);
+                                }
+                            break;
+                            
+                        case 2:  //Left 
+                            if(Input.GetKey(KeyCode.A)) 
+                                {
+                                    transform.parent.gameObject.transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime);
+                                }
+                            break;
+
+                        case 3:  //Right 
+                            if(Input.GetKey(KeyCode.D)) 
+                                {
+                                    transform.parent.gameObject.transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime);
+                                }
+                            break;
+                            
+                        default: //Nothing
+                            break;
+                    }
+                }
+
+                if (otherObject.gameObject.tag == "Robot")
+                {
+                    switch (direction)
+                    {
+                        case 0:  //Forward 
+                            if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+
+                        case 1:  //Back 
+                            if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+                            
+                        case 2:  //Left 
+                            if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+
+                        case 3:  //Right 
+                            if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+                            
+                        default: //Nothing
+                            break;
+                    }
+                }
+            break;
+
+            //infecting robot
+            case 2:
+            break;
+
+            //death
+            case 3:
+            break;
+
         }
     }
 	
