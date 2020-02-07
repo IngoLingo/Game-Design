@@ -7,6 +7,7 @@ TagManager:
   - WallCollision
   - InfectableObjectCollision
   - Robot
+  - Empty
   layers:
   - Default
   - TransparentFX

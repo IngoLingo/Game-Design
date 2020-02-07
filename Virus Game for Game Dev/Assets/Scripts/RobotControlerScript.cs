@@ -4,35 +4,45 @@ using UnityEngine;
 
 public class RobotControlerScript : MonoBehaviour
 {
-	//public GameObject objectMoved;
     public Create_FloatVariable playerSpeed;
+    public float robotState = 0;
 
     private void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "Player")
         {
+                robotState = 1;
             //Forward 
-            if(Input.GetKey(KeyCode.W)) 
+            if(Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.O))
             {
-                    transform.parent.gameObject.transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    otherObject.transform.position = transform.position; 
             }
 
             //Back 
-            if(Input.GetKey(KeyCode.S)) 
+            if(Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.O)) 
             {
-                    transform.parent.gameObject.transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    otherObject.transform.position = transform.position; 
             }
 
             //Left 
-            if(Input.GetKey(KeyCode.A)) 
+            if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.O)) 
             {
-                    transform.parent.gameObject.transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    otherObject.transform.position = transform.position; 
             }
 
             //Right 
-            if(Input.GetKey(KeyCode.D)) 
+            if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.O)) 
             {
-                    transform.parent.gameObject.transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    otherObject.transform.position = transform.position; 
+            }
+            if(Input.GetKey(KeyCode.O)) 
+            {
+                robotState = 0;
+                Debug.Log("NOT collided with player!");
             }
         }
     }

@@ -24,28 +24,28 @@ public class CheckPlayerSideCollision : MonoBehaviour
                     switch (direction)
                     {
                         case 0:  //Forward 
-                            if(Input.GetKey(KeyCode.W)) 
+                            if(Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime);
                                 }
                             break;
 
                         case 1:  //Back 
-                            if(Input.GetKey(KeyCode.S)) 
+                            if(Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime);
                                 }
                             break;
                             
                         case 2:  //Left 
-                            if(Input.GetKey(KeyCode.A)) 
+                            if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime);
                                 }
                             break;
 
                         case 3:  //Right 
-                            if(Input.GetKey(KeyCode.D)) 
+                            if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime);
                                 }
@@ -57,6 +57,46 @@ public class CheckPlayerSideCollision : MonoBehaviour
                 }
 
                 if (otherObject.gameObject.tag == "Robot")
+                {
+                    switch (direction)
+                    {
+                        case 0:  //Forward 
+                            if(Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+
+                        case 1:  //Back 
+                            if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+                            
+                        case 2:  //Left 
+                            if(Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+
+                        case 3:  //Right 
+                            if(Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.O)) 
+                                {
+                                    transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                }
+                            break;
+                            
+                        default: //Nothing
+                            break;
+                    }
+                }
+            break;
+
+            //infecting robot
+            case 2:
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" || otherObject.gameObject.tag == "Robot")
                 {
                     switch (direction)
                     {
@@ -92,10 +132,6 @@ public class CheckPlayerSideCollision : MonoBehaviour
                             break;
                     }
                 }
-            break;
-
-            //infecting robot
-            case 2:
             break;
 
             //death

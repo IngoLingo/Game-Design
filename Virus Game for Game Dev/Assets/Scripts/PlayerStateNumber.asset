@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeveloperNotes: "0 = paused, \n1 = infecting objects, \n2 = infecting robots, \n3
     = death \n(more to add)"
-  value: 0
+  value: 1
   disableMaxValue: 0
   maxValue: 0
   disableMinValue: 0

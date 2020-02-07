@@ -10,7 +10,6 @@ public class ChangeColorScript : MonoBehaviour
     {
         if (collideWith.gameObject.tag == "Player") {
             GetComponent<Renderer>().material.color = new Color(0.5f,1,0.5f);
-            Debug.Log("It Works!");
         }
     }
 }
