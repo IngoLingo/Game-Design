@@ -6,10 +6,11 @@ public class RobotControlerScript : MonoBehaviour
 {
     public Create_FloatVariable playerSpeed;
     public float robotState = 0;
+    public Create_FloatVariable playerState;
 
     private void OnTriggerStay(Collider otherObject)
     {
-        if (otherObject.gameObject.tag == "Player")
+        if (otherObject.gameObject.tag == "Player" && playerState.value == 2)
         {
                 robotState = 1;
             //Forward 

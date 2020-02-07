@@ -24,8 +24,9 @@ public class Create_FloatVariable : ScriptableObject
     public float maxValue;
     public bool disableMinValue = true;
     public float minValue;
-    //public bool resetValueAfterRestart = true;
 
+    //public bool resetValueAfterRestart = true;
+    //public float resetTo;
     
     public void ChangeValue(float amount)
     {

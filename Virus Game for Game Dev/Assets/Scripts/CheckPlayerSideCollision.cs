@@ -8,6 +8,7 @@ public class CheckPlayerSideCollision : MonoBehaviour
     public Create_FloatVariable myState; //0 = paused, 1 = infecting objects, 2 = infecting robots, 3 = death (more to add)
     public Create_FloatVariable playerSpeed;
 
+
     //Check Triggers
     private void OnTriggerStay(Collider otherObject)
 	{
@@ -64,6 +65,7 @@ public class CheckPlayerSideCollision : MonoBehaviour
                             if(Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    myState.value = 2f;
                                 }
                             break;
 
@@ -71,6 +73,7 @@ public class CheckPlayerSideCollision : MonoBehaviour
                             if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    myState.value = 2f;
                                 }
                             break;
                             
@@ -78,6 +81,7 @@ public class CheckPlayerSideCollision : MonoBehaviour
                             if(Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    myState.value = 2f;
                                 }
                             break;
 
@@ -85,6 +89,7 @@ public class CheckPlayerSideCollision : MonoBehaviour
                             if(Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    myState.value = 2f;
                                 }
                             break;
                             
@@ -101,30 +106,62 @@ public class CheckPlayerSideCollision : MonoBehaviour
                     switch (direction)
                     {
                         case 0:  //Forward 
-                            if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.O)) 
+                            if(Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                                    {
+                                        myState.value = 1f;
+                                    }
+                                    else if (otherObject.gameObject.tag == "Robot")
+                                    {
+                                        myState.value = 2f;
+                                    }
                                 }
                             break;
 
                         case 1:  //Back 
-                            if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.O)) 
+                            if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                                    {
+                                        myState.value = 1f;
+                                    }
+                                    else if (otherObject.gameObject.tag == "Robot")
+                                    {
+                                        myState.value = 2f;
+                                    }
                                 }
                             break;
                             
                         case 2:  //Left 
-                            if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.O)) 
+                            if(Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                                    {
+                                        myState.value = 1f;
+                                    }
+                                    else if (otherObject.gameObject.tag == "Robot")
+                                    {
+                                        myState.value = 2f;
+                                    }
                                 }
                             break;
 
                         case 3:  //Right 
-                            if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.O)) 
+                            if(Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.O)) 
                                 {
                                     transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                    if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                                    {
+                                        myState.value = 1f;
+                                    }
+                                    else if (otherObject.gameObject.tag == "Robot")
+                                    {
+                                        myState.value = 2f;
+                                    }
                                 }
                             break;
                             

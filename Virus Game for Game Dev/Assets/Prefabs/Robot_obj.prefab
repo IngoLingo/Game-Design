@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4261375301787937209}
   - component: {fileID: 5346876709211289622}
   - component: {fileID: 6456561091489750287}
+  - component: {fileID: 4535005459425144332}
+  - component: {fileID: 7563654903002804250}
   - component: {fileID: 4261375301787937214}
   - component: {fileID: 4261375301787937212}
   - component: {fileID: 201232469886905526}
@@ -93,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.4, y: 0.4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6456561091489750287
 BoxCollider:
@@ -107,6 +109,32 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4535005459425144332
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261375301787937211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &7563654903002804250
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261375301787937211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4261375301787937214
 Rigidbody:
@@ -150,3 +178,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
   robotState: 0
+  playerState: {fileID: 11400000, guid: be2f21aa81055334e906d71b8d2276e1, type: 2}

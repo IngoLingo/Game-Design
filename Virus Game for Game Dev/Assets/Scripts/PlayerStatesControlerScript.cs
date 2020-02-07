@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerStatesControlerScript : MonoBehaviour
 {
     public Create_FloatVariable myState;
+    public Create_FloatVariable infectedCount;
 
-    // Start
-    void Start()
+    void Awake()
     {
-        myState.value = 0f;
+        infectedCount.value = 0f;
+        myState.value = 1f;
     }
 
     // Update is called once per frame
@@ -18,16 +19,19 @@ public class PlayerStatesControlerScript : MonoBehaviour
         
     }
     //Check Triggers
+    
     private void OnTriggerStay(Collider otherObject)
 	{
+        /*
         if (otherObject.gameObject.tag == "InfectableObjectCollision")
         {
             myState.value = 1f;
         }
-
+        
         if (otherObject.gameObject.tag == "Robot")
         {
             myState.value = 2f;
         }
+        */
     }
 }
