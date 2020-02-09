@@ -5,18 +5,96 @@ using UnityEngine;
 public class RobotControlerScript : MonoBehaviour
 {
     public Create_FloatVariable playerSpeed;
-    public float robotState = 0;
+    public float robotState = 1; //0 = off, 1 = clean, 2 = infected
     public Create_FloatVariable playerState;
+    public float robotHP = 5;
+    public float robotSpeed = 2;
+
+    public Rigidbody damageBox;
+    public Transform barrelEnd;
+    public Transform eyePiviot;
+
+    //Robot AI controles
+    private bool pressUp   = true;
+    private bool pressDown = false;
+    private bool pressLeft = false;
+    private bool pressRight = false;
+    private bool pressAttack = false;
+
+        private void Update() //private IEnumerator UpdateState()
+        {
+                //States
+                if (robotState == 0) //Off
+                {
+                        if (robotHP <= 0) 
+                        {
+                                robotHP = 5;
+                                robotState = 1;
+                        }
+                        GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
+                }
+                else if (robotState == 1) //Clean
+                {
+                        if (robotHP <= 0) 
+                        {
+                                robotHP = 5;
+                                robotState = 2;
+                        }
+                        GetComponent<Renderer>().material.color = new Color(1f,0.5f,0.5f);
+
+                        //If controles are true
+                        if (pressUp == true)
+                        {
+                                transform.Translate(Vector3.forward * robotSpeed * Time.deltaTime);
+                                eyePiviot.transform.rotation =  Quaternion.Euler(0, 90, 0);
+                        }
+                        if (pressDown == true)
+                        {
+                                transform.Translate(-Vector3.forward * robotSpeed * Time.deltaTime); 
+                        }
+                        if (pressLeft == true)
+                        {
+                                transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
+                        }
+                        if (pressRight == true)
+                        {
+                                transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
+                        }
+                        if (pressAttack == true)
+                        {
+                                StartCoroutine(Attacking());
+                        }
+                }
+                else if (robotState == 2) //Infected
+                {
+                        if (robotHP <= 0) 
+                        {
+                                robotHP = 5;
+                                robotState = 0;
+                        }
+                        GetComponent<Renderer>().material.color = new Color(0.5f,1f,0.5f);
+                }
+        }
 
     private void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "Player" && playerState.value == 2)
-        {
-                robotState = 1;
+        {       
+                
+                if (robotHP <= 0) 
+                {
+                        otherObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+                        playerState.value = 3;
+                        return;
+                }
+                
+            robotState = 2;
+
             //Forward 
             if(Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.O))
             {
-                    transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime);
+                    eyePiviot.transform.rotation =  Quaternion.Euler(0, 0, 0); 
                     otherObject.transform.position = transform.position; 
             }
 
@@ -24,6 +102,7 @@ public class RobotControlerScript : MonoBehaviour
             if(Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.O)) 
             {
                     transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime); 
+                    eyePiviot.transform.rotation =  Quaternion.Euler(0, 180, 0);
                     otherObject.transform.position = transform.position; 
             }
 
@@ -31,6 +110,7 @@ public class RobotControlerScript : MonoBehaviour
             if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.O)) 
             {
                     transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    eyePiviot.transform.rotation =  Quaternion.Euler(0, 270, 0);
                     otherObject.transform.position = transform.position; 
             }
 
@@ -38,13 +118,26 @@ public class RobotControlerScript : MonoBehaviour
             if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.O)) 
             {
                     transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
+                    eyePiviot.transform.rotation =  Quaternion.Euler(0, 90, 0);
                     otherObject.transform.position = transform.position; 
             }
+
+            //Clear Firewall
             if(Input.GetKey(KeyCode.O)) 
             {
-                robotState = 0;
-                Debug.Log("NOT collided with player!");
+                //StartCoroutine(Clearing());
             }
         }
     }
+
+    
+    private IEnumerator Attacking()
+    {
+        pressAttack = false;
+        yield return new WaitForSeconds(2f);
+        Rigidbody rocketInstance;
+        rocketInstance = Instantiate(damageBox, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+        //rocketInstance.AddForce(barrelEnd.forward * 100);
+    }
+
 }

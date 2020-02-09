@@ -12,26 +12,13 @@ public class PlayerStatesControlerScript : MonoBehaviour
         infectedCount.value = 0f;
         myState.value = 1f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //Check Triggers
     
+    //Check Triggers
     private void OnTriggerStay(Collider otherObject)
 	{
-        /*
-        if (otherObject.gameObject.tag == "InfectableObjectCollision")
+        if (otherObject.gameObject.tag == "FireWall")
         {
-            myState.value = 1f;
+            myState.value = 3f;
         }
-        
-        if (otherObject.gameObject.tag == "Robot")
-        {
-            myState.value = 2f;
-        }
-        */
     }
 }

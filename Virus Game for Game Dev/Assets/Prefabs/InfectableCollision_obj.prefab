@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6302911182799534507}
   - component: {fileID: 6302911182799534503}
   - component: {fileID: 366439154536347710}
+  - component: {fileID: 141308198514676037}
   m_Layer: 0
   m_Name: InfectableCollision_obj
   m_TagString: InfectableObjectCollision
@@ -119,3 +120,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infectedCount: {fileID: 11400000, guid: 3fb84051a01f7ad438716dc761e5749a, type: 2}
   objectState: 0
+--- !u!114 &141308198514676037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302911182799534508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f64e13ff0d37e4381e7ded9cdb3a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

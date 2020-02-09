@@ -6,4 +6,6 @@ TO DO NEXT:
     Robot AI set up fire-wall (5 sec timer)
     set AI priority for robots
     make off collisions that transform into infectable objects
+
+    make the keycheckdown work better
 */

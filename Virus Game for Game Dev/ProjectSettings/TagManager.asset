@@ -8,6 +8,7 @@ TagManager:
   - InfectableObjectCollision
   - Robot
   - Empty
+  - FireWall
   layers:
   - Default
   - TransparentFX
