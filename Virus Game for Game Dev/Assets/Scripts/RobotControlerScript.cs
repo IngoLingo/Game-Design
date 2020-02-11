@@ -15,11 +15,16 @@ public class RobotControlerScript : MonoBehaviour
     public Transform eyePiviot;
 
     //Robot AI controles
-    private bool pressUp   = true;
+    private bool pressUp   = false;
     private bool pressDown = false;
     private bool pressLeft = false;
     private bool pressRight = false;
-    private bool pressAttack = false;
+    public bool pressAttack = false;
+
+        private void Start()
+        {
+                StartCoroutine(Attacking());
+        }
 
         private void Update() //private IEnumerator UpdateState()
         {
@@ -29,6 +34,7 @@ public class RobotControlerScript : MonoBehaviour
                         if (robotHP <= 0) 
                         {
                                 robotHP = 5;
+                                pressAttack = true;
                                 robotState = 1;
                         }
                         GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
@@ -38,6 +44,7 @@ public class RobotControlerScript : MonoBehaviour
                         if (robotHP <= 0) 
                         {
                                 robotHP = 5;
+                                pressAttack = false;
                                 robotState = 2;
                         }
                         GetComponent<Renderer>().material.color = new Color(1f,0.5f,0.5f);
@@ -62,7 +69,7 @@ public class RobotControlerScript : MonoBehaviour
                         }
                         if (pressAttack == true)
                         {
-                                StartCoroutine(Attacking());
+                                //
                         }
                 }
                 else if (robotState == 2) //Infected
@@ -70,17 +77,19 @@ public class RobotControlerScript : MonoBehaviour
                         if (robotHP <= 0) 
                         {
                                 robotHP = 5;
+                                pressAttack = false;
                                 robotState = 0;
                         }
                         GetComponent<Renderer>().material.color = new Color(0.5f,1f,0.5f);
+                        pressAttack = false;
                 }
         }
 
     private void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "Player" && playerState.value == 2)
-        {       
-                
+        {    
+                transform.rotation = otherObject.transform.rotation;
                 if (robotHP <= 0) 
                 {
                         otherObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
@@ -133,11 +142,13 @@ public class RobotControlerScript : MonoBehaviour
     
     private IEnumerator Attacking()
     {
-        pressAttack = false;
-        yield return new WaitForSeconds(2f);
-        Rigidbody rocketInstance;
-        rocketInstance = Instantiate(damageBox, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-        //rocketInstance.AddForce(barrelEnd.forward * 100);
+        if (pressAttack == true) 
+        {
+                yield return new WaitForSeconds(5f);
+                Rigidbody rocketInstance;
+                rocketInstance = Instantiate(damageBox, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                StartCoroutine(Attacking());
+        }
     }
 
 }

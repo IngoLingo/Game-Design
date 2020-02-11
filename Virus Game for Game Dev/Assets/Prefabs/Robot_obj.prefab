@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1120930481784742951}
   m_Layer: 0
   m_Name: EyePivot
-  m_TagString: Untagged
+  m_TagString: Empty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7402250588709387771}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Empty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 6456561091489750287}
   - component: {fileID: 4261375301787937214}
   - component: {fileID: 201232469886905526}
+  - component: {fileID: 157815222974575004}
   m_Layer: 0
   m_Name: Robot_obj
   m_TagString: Robot
@@ -301,6 +302,22 @@ MonoBehaviour:
     type: 3}
   barrelEnd: {fileID: 711322233654356558}
   eyePiviot: {fileID: 1886243999797347200}
+  pressAttack: 1
+--- !u!114 &157815222974575004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261375301787937211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d212d8366a34ef242af6554a7721361c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5072053012301561069, guid: 1ca77dec72340db4b8d7de3594089f61, type: 3}
+  moveSpeed: 1
+  rotationSpeed: 5
 --- !u!1 &7476803510759132934
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +329,7 @@ GameObject:
   - component: {fileID: 711322233654356558}
   m_Layer: 0
   m_Name: AttackLocation
-  m_TagString: Untagged
+  m_TagString: Empty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
