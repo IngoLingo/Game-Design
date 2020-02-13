@@ -92,8 +92,8 @@ public class RobotControlerScript : MonoBehaviour
                 transform.rotation = otherObject.transform.rotation;
                 if (robotHP <= 0) 
                 {
-                        otherObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-                        playerState.value = 3;
+                        //otherObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+                        playerState.value = 0;
                         return;
                 }
                 
@@ -142,9 +142,9 @@ public class RobotControlerScript : MonoBehaviour
     
     private IEnumerator Attacking()
     {
+        yield return new WaitForSeconds(5f);
         if (pressAttack == true) 
         {
-                yield return new WaitForSeconds(5f);
                 Rigidbody rocketInstance;
                 rocketInstance = Instantiate(damageBox, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 StartCoroutine(Attacking());

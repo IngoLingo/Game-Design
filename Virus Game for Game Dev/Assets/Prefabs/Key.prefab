@@ -71,8 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36045f3829fbec84d874132e0b7c1f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inectedRequired: 0
+  inectedRequired: 40
   infectedCount: {fileID: 11400000, guid: 3fb84051a01f7ad438716dc761e5749a, type: 2}
+  mazeGameUI: {fileID: 0}
+  whatIsPaused: {fileID: 0}
 --- !u!1 &7971412172074522084
 GameObject:
   m_ObjectHideFlags: 0

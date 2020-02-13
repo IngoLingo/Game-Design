@@ -2,33 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyKeyCollision : MonoBehaviour
+public class UnpauseForMazeGame : MonoBehaviour
 {
-    public float inectedRequired;
-    public Create_FloatVariable infectedCount;
-    
     public static bool GameIsPaused;
     public GameObject mazeGameUI;
     public GameObject whatIsPaused;
+    public GameObject doorToUnlock;
 
-    void Start()
-    {
-        Resume();
-    }
-
-    private void OnTriggerStay(Collider otherObject)
+    private void OnTriggerStay2D(Collider2D otherObject)
 	{
-        if (otherObject.gameObject.tag == "Player" && infectedCount.value >= inectedRequired)
+        if (otherObject.gameObject.tag == "Player")
         {
-            Pause();
-            Destroy(gameObject);
+            Resume();
+            Debug.Log("Working");
         }
     }
-    
+
+
     void Resume()
     {
         mazeGameUI.SetActive(false);
         whatIsPaused.SetActive(true);
+        doorToUnlock.SetActive(false);
+        //Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
@@ -36,6 +32,7 @@ public class DestroyKeyCollision : MonoBehaviour
     {
         mazeGameUI.SetActive(true);
         whatIsPaused.SetActive(false);
+        //Time.timeScale = 0f;
         GameIsPaused = true;
     }
 }
