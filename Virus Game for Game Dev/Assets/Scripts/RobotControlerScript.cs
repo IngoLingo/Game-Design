@@ -90,6 +90,7 @@ public class RobotControlerScript : MonoBehaviour
         if (otherObject.gameObject.tag == "Player" && playerState.value == 2)
         {    
                 transform.rotation = otherObject.transform.rotation;
+                otherObject.transform.SetParent(this.transform);
                 if (robotHP <= 0) 
                 {
                         //otherObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
@@ -104,7 +105,7 @@ public class RobotControlerScript : MonoBehaviour
             {
                     transform.Translate(Vector3.forward * playerSpeed.value * Time.deltaTime);
                     eyePiviot.transform.rotation =  Quaternion.Euler(0, 0, 0); 
-                    otherObject.transform.position = transform.position; 
+                    //otherObject.transform.position = transform.position; 
             }
 
             //Back 
@@ -112,7 +113,7 @@ public class RobotControlerScript : MonoBehaviour
             {
                     transform.Translate(-Vector3.forward * playerSpeed.value * Time.deltaTime); 
                     eyePiviot.transform.rotation =  Quaternion.Euler(0, 180, 0);
-                    otherObject.transform.position = transform.position; 
+                    //otherObject.transform.position = transform.position; 
             }
 
             //Left 
@@ -120,7 +121,7 @@ public class RobotControlerScript : MonoBehaviour
             {
                     transform.Translate(-Vector3.right * playerSpeed.value * Time.deltaTime); 
                     eyePiviot.transform.rotation =  Quaternion.Euler(0, 270, 0);
-                    otherObject.transform.position = transform.position; 
+                    //otherObject.transform.position = transform.position; 
             }
 
             //Right 
@@ -128,7 +129,7 @@ public class RobotControlerScript : MonoBehaviour
             {
                     transform.Translate(Vector3.right * playerSpeed.value * Time.deltaTime); 
                     eyePiviot.transform.rotation =  Quaternion.Euler(0, 90, 0);
-                    otherObject.transform.position = transform.position; 
+                    //otherObject.transform.position = transform.position; 
             }
 
             //Clear Firewall

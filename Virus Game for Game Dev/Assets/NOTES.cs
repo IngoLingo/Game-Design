@@ -8,5 +8,8 @@ TO DO NEXT:
     make off collisions that transform into infectable objects
     maze puzzle
 
+    Maybe have a minigame to breakdown a firewall
+    Maybe have the player become the parent of the robot or vice versa
+
     make the keycheckdown work better
 */

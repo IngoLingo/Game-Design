@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMazeControler : MonoBehaviour
 {
     //movement speed in units per second
-    private float movementSpeed = 50f;
+    private float movementSpeed = 100f;
 
     // Update is called once per frame
     void Update()
