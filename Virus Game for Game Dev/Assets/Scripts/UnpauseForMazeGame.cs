@@ -14,7 +14,6 @@ public class UnpauseForMazeGame : MonoBehaviour
         if (otherObject.gameObject.tag == "Player")
         {
             Resume();
-            Debug.Log("Working");
         }
     }
 

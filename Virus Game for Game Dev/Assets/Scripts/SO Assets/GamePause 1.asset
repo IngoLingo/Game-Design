@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e18e3123cb2ae448ff0c6f2a5f10c6, type: 3}
-  m_Name: PlayerStateNumber
+  m_Script: {fileID: 11500000, guid: 79d428f6de2bcd94bba744a56efe41b7, type: 3}
+  m_Name: GamePause 1
   m_EditorClassIdentifier: 
-  DeveloperNotes: "0 = died, \n1 = infecting objects, \n2 = infecting robots\n(more
-    to add)"
-  value: 2
-  disableMaxValue: 0
-  maxValue: 0
-  disableMinValue: 0
-  minValue: 0
+  DeveloperNotes: 
+  value: 0
