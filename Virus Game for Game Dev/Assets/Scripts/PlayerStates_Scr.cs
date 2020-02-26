@@ -24,8 +24,6 @@ public class PlayerStates_Scr : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("myPlayerModeSt = "+ myPlayerModeSt);
-        Debug.Log("myPlayerStatusSt = "+ myPlayerStatusSt);
 
         if (Input.GetKey(KeyCode.W) && playerCollisionCheck.North == false) 
 		{

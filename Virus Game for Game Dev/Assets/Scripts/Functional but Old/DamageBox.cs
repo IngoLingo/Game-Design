@@ -54,7 +54,7 @@ public class DamageBox : MonoBehaviour
     {  
         yield return new WaitForSeconds(5f);
         Rigidbody fireWallInstance;
-        fireWallInstance = Instantiate(fireWall, spawn.position, spawn.rotation) as Rigidbody;
+        fireWallInstance = Instantiate(fireWall, spawn.position, Quaternion.identity) as Rigidbody;
         Destroy(gameObject);
     }
 }

@@ -38,6 +38,13 @@ public class Create_4DirectionCollisionCheck : ScriptableObject
     {
         West = false;
     }
+    public void AllFalse()
+    {
+        North = false;
+        East = false;
+        South = false;
+        West = false;
+    }
 
     //To True
     public void TrueNorth()
@@ -54,6 +61,13 @@ public class Create_4DirectionCollisionCheck : ScriptableObject
     }
     public void TrueWest()
     {
+        West = true;
+    }
+    public void AllTrue()
+    {
+        North = true;
+        East = true;
+        South = true;
         West = true;
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerCollision_Scr : MonoBehaviour
 {
     public Create_4DirectionCollisionCheck playerCollisionCheck;
-    public UnityEvent TriggerStayEvent, TriggerExitEvent;
+    public UnityEvent CollideTrueEvent, CollideFalseEvent;
 
     //Check Triggers
     private void OnTriggerStay(Collider otherObject)
@@ -16,7 +16,7 @@ public class PlayerCollision_Scr : MonoBehaviour
         {
             if (otherObject.gameObject.tag == "InfectableObjectCollision") 
             {
-                TriggerStayEvent.Invoke();
+                CollideFalseEvent.Invoke();
             }
         }
         else
@@ -24,8 +24,14 @@ public class PlayerCollision_Scr : MonoBehaviour
         {
             if (otherObject.gameObject.tag == "InfectableObjectCollision") 
             {
-                TriggerStayEvent.Invoke();
+                CollideTrueEvent.Invoke();
             }
+        }
+        
+        //Can't collide with these objects, no mater the state
+        if (otherObject.gameObject.tag == "WallCollision") 
+        {
+            CollideTrueEvent.Invoke();
         }
     }
     
@@ -35,7 +41,7 @@ public class PlayerCollision_Scr : MonoBehaviour
         {
             if (otherObject.gameObject.tag == "InfectableObjectCollision") 
             {
-                TriggerExitEvent.Invoke();
+                CollideTrueEvent.Invoke();
             }
         }
         else
@@ -43,8 +49,14 @@ public class PlayerCollision_Scr : MonoBehaviour
         {
             if (otherObject.gameObject.tag == "InfectableObjectCollision") 
             {
-                TriggerExitEvent.Invoke();
+                CollideFalseEvent.Invoke();
             }
+        }
+        
+        //Un-collide with these objects, no mater the state
+        if (otherObject.gameObject.tag == "WallCollision") 
+        {
+            CollideFalseEvent.Invoke();
         }
     }
 }

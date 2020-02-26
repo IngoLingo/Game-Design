@@ -219,6 +219,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
+  InvokeAllTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  InvokeAllFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 1
   interact: 0
 --- !u!1 &3654593440893372947
@@ -327,6 +359,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
+  InvokeAllTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  InvokeAllFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 2
   interact: 0
 --- !u!1 &5072053012301561069
@@ -5087,6 +5151,7 @@ MonoBehaviour:
     type: 2}
   myPlayerModeSt: 0
   myPlayerStatusSt: 0
+  test: 0
 --- !u!1 &5128669482522174706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,11 +5211,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
-  TriggerStayEvent:
+  CollideTrueEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: FalseSouth
+        m_MethodName: TrueSouth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5162,11 +5227,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerExitEvent:
+  CollideFalseEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: TrueSouth
+        m_MethodName: FalseSouth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5284,6 +5349,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
+  InvokeAllTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  InvokeAllFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 0
   interact: 0
 --- !u!1 &7543024772450301484
@@ -5345,11 +5442,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
-  TriggerStayEvent:
+  CollideTrueEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: FalseEast
+        m_MethodName: TrueEast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5361,11 +5458,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerExitEvent:
+  CollideFalseEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: TrueEast
+        m_MethodName: FalseEast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5513,11 +5610,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
-  TriggerStayEvent:
+  CollideTrueEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: FalseNorth
+        m_MethodName: TrueNorth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5529,11 +5626,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerExitEvent:
+  CollideFalseEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: TrueNorth
+        m_MethodName: FalseNorth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5604,11 +5701,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
-  TriggerStayEvent:
+  CollideTrueEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: FalseWest
+        m_MethodName: TrueWest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5620,11 +5717,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerExitEvent:
+  CollideFalseEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
-        m_MethodName: TrueWest
+        m_MethodName: FalseWest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5742,5 +5839,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
+  InvokeAllTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  InvokeAllFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f, type: 2}
+        m_MethodName: AllFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 3
   interact: 0
