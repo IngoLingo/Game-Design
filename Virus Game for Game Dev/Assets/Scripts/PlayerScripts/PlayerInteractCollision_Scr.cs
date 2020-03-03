@@ -32,7 +32,8 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
     private void OnTriggerStay(Collider otherObject)
 	{
         //Interact with Firewall
-        if (otherObject.gameObject.tag == "FireWall" && transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Robot) 
+        if ((otherObject.gameObject.tag == "FireWall" || otherObject.gameObject.tag == "OffObject")
+            && transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Robot) 
         {
             Debug.Log("FireWall");
             switch (myCollisionDirectionSt)
@@ -40,7 +41,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.North: 
                     if(Input.GetKey(KeyCode.W) && interact == true) 
                         {
-                            Destroy(otherObject.gameObject);
+                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Infectable;
                             interact = false;
                         }
                     break;
@@ -48,7 +49,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.East: 
                     if(Input.GetKey(KeyCode.D) && interact == true) 
                         {
-                            Destroy(otherObject.gameObject);
+                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Infectable;
                             interact = false;
                         }
                     break;
@@ -56,7 +57,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.South: 
                     if(Input.GetKey(KeyCode.S) && interact == true) 
                         {
-                            Destroy(otherObject.gameObject);
+                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Infectable;
                             interact = false;
                         }
                     break;
@@ -64,7 +65,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.West: 
                     if(Input.GetKey(KeyCode.A) && interact == true) 
                         {
-                            Destroy(otherObject.gameObject);
+                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Infectable;
                             interact = false;
                         }
                     break;
@@ -131,7 +132,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.W) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //parent to robot
+                            this.transform.parent.transform.SetParent(otherObject.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
                             AllFalseCollisions();
                             interact = false;
@@ -142,7 +143,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.D) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //parent to robot
+                            this.transform.parent.transform.SetParent(otherObject.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
                             AllFalseCollisions();
                             interact = false;
@@ -153,7 +154,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.S) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //parent to robot
+                            this.transform.parent.transform.SetParent(otherObject.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
                             AllFalseCollisions();
                             interact = false;
@@ -164,7 +165,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.A) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //parent to robot
+                            this.transform.parent.transform.SetParent(otherObject.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
                             AllFalseCollisions();
                             interact = false;
@@ -173,7 +174,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
             }
         }
         
-        interact = false;
+        //interact = false;
     }
     
     private void OnTriggerExit(Collider otherObject)
@@ -194,4 +195,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
     {
         InvokeAllFalse.Invoke();
     }
+
+    //Corutine
+
 }

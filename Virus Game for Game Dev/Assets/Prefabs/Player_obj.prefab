@@ -252,6 +252,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 1
+  newObject: {fileID: 2087523122216460359, guid: 9d8dd71267e1a624586f2f8738627ed2,
+    type: 3}
   interact: 0
 --- !u!1 &3654593440893372947
 GameObject:
@@ -392,6 +394,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 2
+  newObject: {fileID: 2087523122216460359, guid: 9d8dd71267e1a624586f2f8738627ed2,
+    type: 3}
   interact: 0
 --- !u!1 &5072053012301561069
 GameObject:
@@ -5382,6 +5386,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 0
+  newObject: {fileID: 2087523122216460359, guid: 9d8dd71267e1a624586f2f8738627ed2,
+    type: 3}
   interact: 0
 --- !u!1 &7543024772450301484
 GameObject:
@@ -5872,4 +5878,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 3
+  newObject: {fileID: 2087523122216460359, guid: 9d8dd71267e1a624586f2f8738627ed2,
+    type: 3}
   interact: 0

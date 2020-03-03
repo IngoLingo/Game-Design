@@ -144,12 +144,13 @@ public class RobotControlerScript : MonoBehaviour
     private IEnumerator Attacking()
     {
         yield return new WaitForSeconds(5f);
-        if (pressAttack == true) 
+        Debug.Log("Attack");
+        /*if (pressAttack == true) 
         {
                 Rigidbody rocketInstance;
                 rocketInstance = Instantiate(damageBox, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 StartCoroutine(Attacking());
-        }
+        }*/
     }
 
 }

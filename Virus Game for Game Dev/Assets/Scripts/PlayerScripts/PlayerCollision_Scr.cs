@@ -14,7 +14,7 @@ public class PlayerCollision_Scr : MonoBehaviour
 	{
         if (transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Object) 
         {
-            if (otherObject.gameObject.tag == "InfectableObjectCollision") 
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" || otherObject.gameObject.tag == "FireWall") 
             {
                 CollideFalseEvent.Invoke();
             }
@@ -22,14 +22,14 @@ public class PlayerCollision_Scr : MonoBehaviour
         else
         if (transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Robot) 
         {
-            if (otherObject.gameObject.tag == "InfectableObjectCollision") 
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" || otherObject.gameObject.tag == "FireWall") 
             {
                 CollideTrueEvent.Invoke();
             }
         }
         
         //Can't collide with these objects, no mater the state
-        if (otherObject.gameObject.tag == "WallCollision") 
+        if (otherObject.gameObject.tag == "WallCollision" || otherObject.gameObject.tag == "OffObject") 
         {
             CollideTrueEvent.Invoke();
         }
@@ -39,7 +39,7 @@ public class PlayerCollision_Scr : MonoBehaviour
 	{
         if (transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Object) 
         {
-            if (otherObject.gameObject.tag == "InfectableObjectCollision") 
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" || otherObject.gameObject.tag == "FireWall") 
             {
                 CollideTrueEvent.Invoke();
             }
@@ -47,14 +47,14 @@ public class PlayerCollision_Scr : MonoBehaviour
         else
         if (transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Robot) 
         {
-            if (otherObject.gameObject.tag == "InfectableObjectCollision") 
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" || otherObject.gameObject.tag == "FireWall") 
             {
                 CollideFalseEvent.Invoke();
             }
         }
         
         //Un-collide with these objects, no mater the state
-        if (otherObject.gameObject.tag == "WallCollision") 
+        if (otherObject.gameObject.tag == "WallCollision" || otherObject.gameObject.tag == "OffObject") 
         {
             CollideFalseEvent.Invoke();
         }

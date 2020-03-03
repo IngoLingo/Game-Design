@@ -12,4 +12,6 @@ TO DO NEXT:
     Maybe have the player become the parent of the robot or vice versa
 
     make the keycheckdown work better
+
+    Have firewall replace the infectable obj collision when it is put up. Have infectable obj replace firewall when it is taken down.
 */

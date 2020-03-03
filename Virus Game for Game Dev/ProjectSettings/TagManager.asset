@@ -9,6 +9,7 @@ TagManager:
   - Robot
   - Empty
   - FireWall
+  - OffObject
   layers:
   - Default
   - TransparentFX
