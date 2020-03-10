@@ -48,11 +48,6 @@ public class InfectableCollisionStates_Scr : MonoBehaviour
             }
     }
 
-    /*private void OnTriggerStay(Collider otherObject)
-    {
-
-    }*/
-
     void TurnOff()
     {
         childOffObj.SetActive(true);

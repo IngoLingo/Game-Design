@@ -12,9 +12,15 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
     public enum CollisionDirection {North, East, South, West};
     public CollisionDirection myCollisionDirectionSt;
 
+    public GameObject pausableObj;
+
     public bool interact = false;
     //private bool skipLine = false;
 
+    private void OnDisable()
+    {
+        interact = false;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.O)) 
@@ -81,7 +87,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.W) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //unparent robot
+                            this.transform.parent.transform.SetParent(pausableObj.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Object;
                             AllTrueCollisions();
                             interact = false;
@@ -92,7 +98,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.D) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //unparent robot
+                            this.transform.parent.transform.SetParent(pausableObj.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Object;
                             AllTrueCollisions();
                             interact = false;
@@ -103,7 +109,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.S) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //unparent robot
+                            this.transform.parent.transform.SetParent(pausableObj.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Object;
                             AllTrueCollisions();
                             interact = false;
@@ -114,7 +120,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                     if(Input.GetKey(KeyCode.A) && interact == true) 
                         {
                             transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            //unparent robot
+                            this.transform.parent.transform.SetParent(pausableObj.transform);
                             transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Object;
                             AllTrueCollisions();
                             interact = false;
@@ -131,44 +137,84 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.North: 
                     if(Input.GetKey(KeyCode.W) && interact == true) 
                         {
-                            transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            this.transform.parent.transform.SetParent(otherObject.transform);
-                            transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
-                            AllFalseCollisions();
-                            interact = false;
+                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean ||
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                            {
+                                otherObject.transform.rotation = Quaternion.identity;
+                                transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                this.transform.parent.transform.SetParent(otherObject.transform);
+                                transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
+                                AllFalseCollisions();
+                                interact = false;
+                            }
+                            else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                            {
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
+                                interact = false;
+                            }
                         }
                     break;
                     
                 case CollisionDirection.East: 
                     if(Input.GetKey(KeyCode.D) && interact == true) 
                         {
-                            transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            this.transform.parent.transform.SetParent(otherObject.transform);
-                            transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
-                            AllFalseCollisions();
-                            interact = false;
+                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean ||
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                            {
+                                otherObject.transform.rotation = Quaternion.identity;
+                                transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                this.transform.parent.transform.SetParent(otherObject.transform);
+                                transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
+                                AllFalseCollisions();
+                                interact = false;
+                            }
+                            else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                            {
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
+                                interact = false;
+                            }
                         }
                     break;
                     
                 case CollisionDirection.South: 
                     if(Input.GetKey(KeyCode.S) && interact == true) 
                         {
-                            transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            this.transform.parent.transform.SetParent(otherObject.transform);
-                            transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
-                            AllFalseCollisions();
-                            interact = false;
+                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean ||
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                            {
+                                otherObject.transform.rotation = Quaternion.identity;
+                                transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                this.transform.parent.transform.SetParent(otherObject.transform);
+                                transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
+                                AllFalseCollisions();
+                                interact = false;
+                            }
+                            else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                            {
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
+                                interact = false;
+                            }
                         }
                     break;
                     
                 case CollisionDirection.West: 
                     if(Input.GetKey(KeyCode.A) && interact == true) 
                         {
-                            transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
-                            this.transform.parent.transform.SetParent(otherObject.transform);
-                            transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
-                            AllFalseCollisions();
-                            interact = false;
+                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean ||
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                            {
+                                otherObject.transform.rotation = Quaternion.identity;
+                                transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
+                                this.transform.parent.transform.SetParent(otherObject.transform);
+                                transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
+                                AllFalseCollisions();
+                                interact = false;
+                            }
+                            else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                            {
+                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
+                                interact = false;
+                            }
                         }
                     break;
             }
@@ -191,6 +237,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
     {
         InvokeAllTrue.Invoke();
     }
+
     void AllFalseCollisions()
     {
         InvokeAllFalse.Invoke();

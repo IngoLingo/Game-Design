@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RobotMovement_Scr : MonoBehaviour
+public class HumanMovement_Scr : MonoBehaviour
 {
     
     public Create_4DirectionCollisionCheck playerCollisionCheck;

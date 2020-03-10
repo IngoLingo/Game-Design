@@ -18,10 +18,9 @@ public class DestroyKeyCollision : MonoBehaviour
 
     private void OnTriggerStay(Collider otherObject)
 	{
-        if (otherObject.gameObject.tag == "Player" && infectedCount.value >= inectedRequired)
+        if (otherObject.gameObject.tag == "Player" && infectedCount.value >= inectedRequired && GetComponent<KeyStates_Scr>().myKeyStatusSt == KeyStates_Scr.KeyStatusStates.Clean)
         {
             Pause();
-            Destroy(gameObject);
         }
     }
     

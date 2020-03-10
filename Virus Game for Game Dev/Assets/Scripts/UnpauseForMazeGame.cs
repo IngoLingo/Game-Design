@@ -7,7 +7,8 @@ public class UnpauseForMazeGame : MonoBehaviour
     public static bool GameIsPaused;
     public GameObject mazeGameUI;
     public GameObject whatIsPaused;
-    public GameObject doorToUnlock;
+    //public GameObject doorToUnlock;
+    public GameObject associatedKey;
 
     private void OnTriggerStay2D(Collider2D otherObject)
 	{
@@ -22,7 +23,8 @@ public class UnpauseForMazeGame : MonoBehaviour
     {
         mazeGameUI.SetActive(false);
         whatIsPaused.SetActive(true);
-        doorToUnlock.SetActive(false);
+        associatedKey.GetComponent<KeyStates_Scr>().myKeyStatusSt = KeyStates_Scr.KeyStatusStates.Infected;
+        associatedKey.GetComponent<KeyStates_Scr>().myKeyModeSt = KeyStates_Scr.KeyModeState.OpenLock;
         //Time.timeScale = 1f;
         GameIsPaused = false;
     }
