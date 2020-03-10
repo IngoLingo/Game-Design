@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4862558153715992384}
   - component: {fileID: 4480721094317384181}
   - component: {fileID: 8482009687695437550}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyePivot
   m_TagString: Empty
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 8933345877078502370}
   - component: {fileID: 3733003402203504512}
   - component: {fileID: 5949644222918633902}
-  m_Layer: 0
+  - component: {fileID: 8726734978650525819}
+  m_Layer: 9
   m_Name: Interact Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +170,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8726734978650525819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605765715946875959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebbfb3296202da4c93bb8e5f0a373b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDelay: 60
+  attackDelayReset: 60
+  mainParentObject: {fileID: 4261375301787937211}
 --- !u!1 &1124006618809615978
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +196,7 @@ GameObject:
   - component: {fileID: 5205593235824360384}
   - component: {fileID: 8579570979231972423}
   - component: {fileID: 3409409978753020267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Collision Check
   m_TagString: Robot
   m_Icon: {fileID: 0}
@@ -226,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d76b01d28f9b24d9789d2daee5b7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainParentObject: {fileID: 4261375301787937211}
 --- !u!1 &2437851766587620987
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +256,7 @@ GameObject:
   - component: {fileID: 8774202442001016026}
   - component: {fileID: 4164174826857068889}
   - component: {fileID: 8123017200932659641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sight Colision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +359,7 @@ GameObject:
   - component: {fileID: 5869817082677120099}
   - component: {fileID: 5069326277413773850}
   - component: {fileID: 8141353526995624397}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RobotGeo
   m_TagString: Robot
   m_Icon: {fileID: 0}
@@ -423,7 +440,7 @@ GameObject:
   - component: {fileID: 4261375301787937214}
   - component: {fileID: 8126055841344812891}
   - component: {fileID: 2091989455258605036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Robot_obj
   m_TagString: Robot
   m_Icon: {fileID: 0}
@@ -501,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed29783f70c7b3458e592e760948d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAttack: 1
   myRobotStatusSt: 0
   myRobotModeSt: 0
   objectGeo: {fileID: 3013552093669474831}
@@ -519,7 +537,7 @@ MonoBehaviour:
   playerCollisionCheck: {fileID: 11400000, guid: c37c50a2c00ff344981838f35519b50f,
     type: 2}
   playerSpeed: {fileID: 11400000, guid: d087158c78c94ac4e9cc147ec468fdae, type: 2}
-  target: {fileID: 5072053012301561069, guid: 1ca77dec72340db4b8d7de3594089f61, type: 3}
+  target: {fileID: 0}
   moveSpeed: 1
   rotationSpeed: 5
 --- !u!1 &6568423770086593670
@@ -533,7 +551,7 @@ GameObject:
   - component: {fileID: 7708490481546471855}
   - component: {fileID: 980409344910549579}
   - component: {fileID: 7775314396120279101}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Empty
   m_Icon: {fileID: 0}

@@ -252,6 +252,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 1
+  pausableObj: {fileID: 0}
   interact: 0
 --- !u!1 &3654593440893372947
 GameObject:
@@ -392,6 +393,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 2
+  pausableObj: {fileID: 0}
   interact: 0
 --- !u!1 &5072053012301561069
 GameObject:
@@ -5151,7 +5153,6 @@ MonoBehaviour:
     type: 2}
   myPlayerModeSt: 0
   myPlayerStatusSt: 0
-  test: 0
 --- !u!1 &5128669482522174706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,6 +5383,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 0
+  pausableObj: {fileID: 0}
   interact: 0
 --- !u!1 &7543024772450301484
 GameObject:
@@ -5485,6 +5487,8 @@ GameObject:
   - component: {fileID: 4363718014511835695}
   - component: {fileID: 5072605694162978729}
   - component: {fileID: 157020566541199655}
+  - component: {fileID: 2382223385893076131}
+  - component: {fileID: 352557091799215849}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -5551,6 +5555,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2382223385893076131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562834345448176622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599f48db1a63e874b9cff26d8d9f14b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backupList: []
+  mainParentObject: {fileID: 5072053012301561069}
+--- !u!136 &352557091799215849
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562834345448176622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7725883327784501874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5872,4 +5904,5 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   myCollisionDirectionSt: 3
+  pausableObj: {fileID: 0}
   interact: 0

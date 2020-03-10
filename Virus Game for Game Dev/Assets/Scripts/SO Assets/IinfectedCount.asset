@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IinfectedCount
   m_EditorClassIdentifier: 
   DeveloperNotes: A rational number
-  value: 6
+  value: 0
   disableMaxValue: 1
   maxValue: 0
   disableMinValue: 1

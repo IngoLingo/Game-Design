@@ -6,12 +6,15 @@ public class RobotStates_Scr : MonoBehaviour
 {    
     public enum RobotStatusStates {Clean, Infected, Off};
     public enum RobotModeStates {Idle, Move, Interact, Stun};
+    public bool canAttack = true;
 
     public RobotStatusStates myRobotStatusSt;
     public RobotModeStates myRobotModeSt;
     public GameObject objectGeo;
+    public GameObject playerObject;
 
-    
+
+
 private void Update()
     {
         //States
@@ -26,7 +29,14 @@ private void Update()
         else if (myRobotStatusSt == RobotStatusStates.Off)
         {
             objectGeo.GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
+
+            if (playerObject.GetComponent<PlayerDeathCheck_Scr>().backupList.Contains(this.gameObject))
+            {
+                playerObject.GetComponent<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
+            }
         }
+
+
     }
 
     //Check Triggers

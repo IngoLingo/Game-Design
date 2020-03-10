@@ -13,7 +13,7 @@ public class PlayerStates_Scr : MonoBehaviour
     public PlayerModeStates myPlayerModeSt;
     public PlayerStatusStates myPlayerStatusSt;
 
-    public float test = 0f;
+    //public float test = 0f;
 
     void Start()
     {

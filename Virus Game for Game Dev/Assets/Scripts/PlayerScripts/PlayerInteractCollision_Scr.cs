@@ -37,11 +37,10 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
     //Check Triggers
     private void OnTriggerStay(Collider otherObject)
 	{
-        //Interact with Firewall
+        //Interact with Firewall and off object
         if ((otherObject.gameObject.tag == "FireWall" || otherObject.gameObject.tag == "OffObject")
             && transform.parent.GetComponent<PlayerStates_Scr>().myPlayerModeSt == PlayerStates_Scr.PlayerModeStates.Robot) 
         {
-            Debug.Log("FireWall");
             switch (myCollisionDirectionSt)
             {
                 case CollisionDirection.North: 
@@ -137,8 +136,7 @@ public class PlayerInteractCollision_Scr : MonoBehaviour
                 case CollisionDirection.North: 
                     if(Input.GetKey(KeyCode.W) && interact == true) 
                         {
-                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean ||
-                                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                            if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Off)
                             {
                                 otherObject.transform.rotation = Quaternion.identity;
                                 transform.parent.gameObject.transform.position = otherObject.gameObject.transform.position;
