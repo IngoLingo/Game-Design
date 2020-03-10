@@ -19,6 +19,7 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
             {
                 mainParentObject.transform.position = backupList[backupList.Count - 1].gameObject.transform.position;
                 mainParentObject.transform.SetParent(backupList[backupList.Count - 1].transform);
+                GetComponentInParent<PlayerStates_Scr>().myPlayerModeSt = PlayerStates_Scr.PlayerModeStates.Robot;
                 GetComponentInParent<PlayerStates_Scr>().myPlayerStatusSt = PlayerStates_Scr.PlayerStatusStates.Alive;
             }
             else

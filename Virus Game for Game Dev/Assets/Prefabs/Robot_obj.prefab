@@ -127,7 +127,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605765715946875959}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -522,6 +522,7 @@ MonoBehaviour:
   myRobotStatusSt: 0
   myRobotModeSt: 0
   objectGeo: {fileID: 3013552093669474831}
+  playerObject: {fileID: 0}
 --- !u!114 &2091989455258605036
 MonoBehaviour:
   m_ObjectHideFlags: 0

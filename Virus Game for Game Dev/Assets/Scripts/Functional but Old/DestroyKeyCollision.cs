@@ -14,6 +14,7 @@ public class DestroyKeyCollision : MonoBehaviour
     void Start()
     {
         Resume();
+        infectedCount.value = 0;
     }
 
     private void OnTriggerStay(Collider otherObject)
