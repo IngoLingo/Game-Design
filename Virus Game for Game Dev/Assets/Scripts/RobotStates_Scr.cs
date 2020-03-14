@@ -15,7 +15,7 @@ public class RobotStates_Scr : MonoBehaviour
 
 
 
-private void Update()
+    private void Update()
     {
         //States
         if (myRobotStatusSt == RobotStatusStates.Clean)
@@ -38,6 +38,8 @@ private void Update()
 
 
     }
+
+   
 
     //Check Triggers
     /*private void OnTriggerStay(Collider otherObject)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HumanSight_Scr : MonoBehaviour
 {
-    private void OnTriggerStay(Collider otherObject)
+    /*private void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "Player")
         {
@@ -28,5 +28,5 @@ public class HumanSight_Scr : MonoBehaviour
                 transform.parent.GetComponent<HumanMovement_Scr>().targetList.Remove(otherObject.gameObject);
             }
         }
-    }
+    }*/
 }
