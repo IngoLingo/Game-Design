@@ -9,7 +9,7 @@ public class RobotInteractCollision_Scr : MonoBehaviour
     public GameObject mainParentObject;
 
     //Check Triggers
-    private void OnTriggerStay(Collider otherObject)
+    /*private void OnTriggerStay(Collider otherObject)
     {
         if (mainParentObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean)
         {
@@ -45,5 +45,5 @@ public class RobotInteractCollision_Scr : MonoBehaviour
                 attackDelay = attackDelayReset;
             }
      
-    }
+    }*/
 }

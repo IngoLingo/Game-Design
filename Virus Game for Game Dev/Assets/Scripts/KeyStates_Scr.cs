@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyStates_Scr : MonoBehaviour
 {
-    public enum KeyStatusStates { Clean, Infected, Off };
+   /* public enum KeyStatusStates { Clean, Infected, Off };
     public enum KeyModeState { ClosedLock, OpenLock };
 
     public GameObject myDoor;
@@ -40,5 +40,5 @@ public class KeyStates_Scr : MonoBehaviour
         {
             objectGeo.GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
         }
-    }
+    }*/
 }

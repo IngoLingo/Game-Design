@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyKeyCollision : MonoBehaviour
 {
-    public float inectedRequired;
+    /*public float inectedRequired;
     public Create_FloatVariable infectedCount;
     
     public static bool GameIsPaused;
@@ -37,5 +37,5 @@ public class DestroyKeyCollision : MonoBehaviour
         mazeGameUI.SetActive(true);
         whatIsPaused.SetActive(false);
         GameIsPaused = true;
-    }
+    }*/
 }

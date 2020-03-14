@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 6568190304267703774}
   - component: {fileID: 6636039485252251754}
   - component: {fileID: 543457623058239306}
+  - component: {fileID: 8143175311001979018}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -57,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 5175571653832116273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4869708061165334108}
   - {fileID: 922369193286146501}
@@ -75,7 +76,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &543457623058239306
 MonoBehaviour:
@@ -89,9 +90,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f540f732609d6df4aa6744605dba3ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myDoorStatusSt: 1
+  DoorOpen: 0
+  myDoorStatusSt: 0
+  playerObject: {fileID: 0}
+  geoToColor: {fileID: 8014551411874316377}
   childOpenObj: {fileID: 2842653800606283949}
   childCloseObj: {fileID: 8014551411874316377}
+--- !u!114 &8143175311001979018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175571653832116273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95c94e33edfb4482168d7d4769879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inectedRequired: 0
+  infectedCount: {fileID: 11400000, guid: 3fb84051a01f7ad438716dc761e5749a, type: 2}
+  mazeGameUI: {fileID: 0}
+  whatIsPaused: {fileID: 0}
 --- !u!1 &8014551411874316377
 GameObject:
   m_ObjectHideFlags: 0

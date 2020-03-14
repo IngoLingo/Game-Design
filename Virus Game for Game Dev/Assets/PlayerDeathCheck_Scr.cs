@@ -30,7 +30,7 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider otherObject)
+    /*void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "FireWall" || otherObject.gameObject.tag == "OffObject")
         {
@@ -44,5 +44,5 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
                 backupList.Add(otherObject.gameObject);
             }
         }
-    }
+    }*/
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class RobotSight_Scr : MonoBehaviour
 {
     private bool seePlayer = false;
-    //Check Triggers
 
     private void Update()
     {
@@ -31,42 +30,13 @@ public class RobotSight_Scr : MonoBehaviour
             StartCoroutine(StopChase());
         }
     }
-    /*private void OnTriggerStay(Collider otherObject)
-	{
-        if (transform.parent.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean)
-        {
-            if (otherObject.gameObject.tag == "Player")
-            {
-                seePlayer = true;
-                transform.parent.GetComponent<RobotStates_Scr>().myRobotModeSt = RobotStates_Scr.RobotModeStates.Move;
-            }
-        }
-        else 
-        if (transform.parent.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Clean)
-        {
-            seePlayer = false;
-        }
-    }
-
-    private void OnTriggerExit(Collider otherObject)
-	{
-        if (transform.parent.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean)
-        {
-            if (otherObject.gameObject.tag == "Player")
-            {
-                //transform.parent.GetComponent<RobotStates_Scr>().myRobotModeSt = RobotStates_Scr.RobotModeStates.Idle;
-                seePlayer = false;
-                StartCoroutine(StopChase());
-            }
-        }
-    }*/
 
     private IEnumerator StopChase()
     {
         yield return new WaitForSeconds(5f);
         if (seePlayer == false)
         {
-            transform.parent.GetComponent<RobotStates_Scr>().myRobotModeSt = RobotStates_Scr.RobotModeStates.Idle;
+            GetComponent<RobotStates_Scr>().myRobotModeSt = RobotStates_Scr.RobotModeStates.Idle;
         }
     }
 }

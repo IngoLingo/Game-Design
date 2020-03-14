@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class DoorStates_Scr : MonoBehaviour
 {
-    public enum DoorStatusStates { Open, Close };
+    public enum DoorStatusStates { Clean, Infected, Off };
+    public bool DoorOpen = false;
+
     public DoorStatusStates myDoorStatusSt;
+
+    public GameObject playerObject;
+    public GameObject geoToColor;
 
     public GameObject childOpenObj;
     public GameObject childCloseObj;
 
     void Start()
     {
-        if (myDoorStatusSt == DoorStatusStates.Open)
+        if (DoorOpen == true)
         {
             OpenDoor();
         }
 
-        if (myDoorStatusSt == DoorStatusStates.Close)
+        if (DoorOpen == false)
         {
             CloseDoor();
         }
@@ -26,23 +31,37 @@ public class DoorStates_Scr : MonoBehaviour
     //May need to replace with something that dosent run all the time
     void Update()
     {
-        if (myDoorStatusSt == DoorStatusStates.Open)
+        //Open/Close
+        if (DoorOpen == true)
         {
             OpenDoor();
         }
-
-        if (myDoorStatusSt == DoorStatusStates.Close)
+        if (DoorOpen == false)
         {
             CloseDoor();
+        }
+
+        //Colors
+        if (myDoorStatusSt == DoorStatusStates.Clean)
+        {
+            geoToColor.GetComponent<Renderer>().material.color = new Color(1f, 0.5f, 0.5f);
+        }
+        else if (myDoorStatusSt == DoorStatusStates.Infected)
+        {
+            geoToColor.GetComponent<Renderer>().material.color = new Color(0.5f, 1f, 0.5f);
+        }
+        else if (myDoorStatusSt == DoorStatusStates.Off)
+        {
+            geoToColor.GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
         }
     }
 
     private void OnTriggerStay(Collider otherObject)
     {
-        if ((myDoorStatusSt == DoorStatusStates.Close) && (
+        if ((DoorOpen == false) && (
             otherObject.gameObject.tag == "Player" ||
-            otherObject.gameObject.tag == "Robot" /*||
-            otherObject.gameObject.tag == "Human"*/))
+            otherObject.gameObject.tag == "Robot" ||
+            otherObject.gameObject.tag == "Human"))
         {
             OpenDoor();
         }

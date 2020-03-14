@@ -30,9 +30,9 @@ public class RobotStates_Scr : MonoBehaviour
         {
             objectGeo.GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
 
-            if (playerObject.GetComponent<PlayerDeathCheck_Scr>().backupList.Contains(this.gameObject))
+            if (playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Contains(this.gameObject))
             {
-                playerObject.GetComponent<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
+                playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
             }
         }
 

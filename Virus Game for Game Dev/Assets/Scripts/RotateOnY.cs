@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateOnY : MonoBehaviour
 {
-    //public float rotateing = 0.5f;
+    /*//public float rotateing = 0.5f;
     
     void Update()
     {
@@ -13,5 +13,5 @@ public class RotateOnY : MonoBehaviour
         {
             transform.RotateAround(transform.position, transform.up, 0.5f);
         }
-    }
+    }*/
 }

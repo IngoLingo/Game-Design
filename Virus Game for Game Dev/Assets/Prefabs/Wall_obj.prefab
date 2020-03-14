@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7639821733269316849}
   - component: {fileID: 7639821733269316848}
   - component: {fileID: 1262765270514609928}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall_obj
   m_TagString: WallCollision
   m_Icon: {fileID: 0}
