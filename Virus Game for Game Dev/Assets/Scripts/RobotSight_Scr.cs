@@ -24,7 +24,7 @@ public class RobotSight_Scr : MonoBehaviour
                 seePlayer = false;
             }
         }
-        else
+        else if(dist > 5)
         {
             seePlayer = false;
             StartCoroutine(StopChase());
@@ -34,7 +34,7 @@ public class RobotSight_Scr : MonoBehaviour
     private IEnumerator StopChase()
     {
         yield return new WaitForSeconds(5f);
-        if (seePlayer == false)
+        if (seePlayer == false && GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean)
         {
             GetComponent<RobotStates_Scr>().myRobotModeSt = RobotStates_Scr.RobotModeStates.Idle;
         }

@@ -30,19 +30,23 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
         }
     }
 
-    /*void OnTriggerStay(Collider otherObject)
+    void OnTriggerStay(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "FireWall" || otherObject.gameObject.tag == "OffObject")
         {
-            GetComponentInParent<PlayerStates_Scr>().myPlayerStatusSt = PlayerStates_Scr.PlayerStatusStates.Dead;//maybe replace with a non update function
+            GetComponentInParent<PlayerStates_Scr>().myPlayerStatusSt = PlayerStates_Scr.PlayerStatusStates.Dead;
         }
 
-        if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+        if (otherObject.GetComponent<RobotStates_Scr>() != null)
         {
-            if (!backupList.Contains(otherObject.gameObject))
+            if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
             {
-                backupList.Add(otherObject.gameObject);
+                if (!backupList.Contains(otherObject.gameObject))
+                {
+                    backupList.Add(otherObject.gameObject);
+                }
             }
         }
-    }*/
+
+    }
 }

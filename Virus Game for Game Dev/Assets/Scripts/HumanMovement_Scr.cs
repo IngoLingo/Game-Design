@@ -18,12 +18,6 @@ public class HumanMovement_Scr : MonoBehaviour
 
     void Update()
     {
-        //rotate to look at the target
-        /*transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetList[targetList.Count-1].transform.position - transform.position), rotationSpeed * Time.deltaTime);
-
-        //move towards the player
-        transform.position += transform.forward * Time.deltaTime * moveSpeed;
-        */
         agent.SetDestination(targetList[targetList.Count - 1].transform.position);
     }
 }

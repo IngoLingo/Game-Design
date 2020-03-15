@@ -10,31 +10,36 @@ public class HumanInteractCollision_Scr : MonoBehaviour
 
     void OnTriggerStay(Collider otherObject)
     {
-        if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Clean)
+        if (otherObject.GetComponent<RobotStates_Scr>() != null)
         {
-            if (attackDelay <= 0)
+            if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Clean)
             {
-                attackDelay = attackDelayReset;
+                if (attackDelay <= 0)
+                {
+                    attackDelay = attackDelayReset;
 
-                if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
-                {
-                    otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
-                    //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Idle;
+                    if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected)
+                    {
+                        otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
+                        //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Idle;
+                    }
+                    else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                    {
+                        otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
+                        //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Idle;
+                    }
                 }
-                else if (otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Off)
+                else
                 {
-                    otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Clean;
-                    //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Idle;
+                    attackDelay -= 1;
                 }
             }
-            else
+
+
+            if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Clean)
             {
-                attackDelay -= 1;
+                //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Move;
             }
-        }
-        if (otherObject.gameObject.tag == "Robot" && otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt != RobotStates_Scr.RobotStatusStates.Clean)
-        {
-            //mainParentObject.GetComponent<HumanStates_Scr>().myHumanModeSt = HumanStates_Scr.HumanModeStates.Move;
         }
     }
 }

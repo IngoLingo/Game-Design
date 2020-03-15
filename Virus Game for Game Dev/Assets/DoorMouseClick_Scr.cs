@@ -31,7 +31,7 @@ public class DoorMouseClick_Scr : MonoBehaviour
                 break;
 
             case DoorStates_Scr.DoorStatusStates.Clean:
-                if (dist <= 1.5f)
+                if (dist <= 1.5f && infectedCount.value >= inectedRequired)
                 {
                     Pause();
                     //GetComponent<DoorStates_Scr>().myDoorStatusSt = DoorStates_Scr.DoorStatusStates.Infected;

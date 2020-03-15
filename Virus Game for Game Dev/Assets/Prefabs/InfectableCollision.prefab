@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 439534382859362167}
   - component: {fileID: 2242495947937402408}
   - component: {fileID: 4111111886948087435}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InfectableBlock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d50b221d19c7d84eaeb0f41c9a893ff, type: 2}
+  - {fileID: 2100000, guid: 529dd96200fbec141aa513eb673af82c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3118364448666954274}
   - component: {fileID: 4799040073517964889}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FireWall
   m_TagString: FireWall
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5966422807644487278}
   - component: {fileID: 6097473311340738310}
   - component: {fileID: 3576192582097289951}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,8 +229,7 @@ GameObject:
   - component: {fileID: 4847751051160896216}
   - component: {fileID: 354847401750707539}
   - component: {fileID: 6902742946632986408}
-  - component: {fileID: 6645009896325269307}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InfectableBlock
   m_TagString: InfectableObjectCollision
   m_Icon: {fileID: 0}
@@ -335,19 +334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infectedCount: {fileID: 11400000, guid: 3fb84051a01f7ad438716dc761e5749a, type: 2}
   objectState: 0
---- !u!114 &6645009896325269307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4552794012545903523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f64e13ff0d37e4381e7ded9cdb3a5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infectedState: 0
 --- !u!1 &4993266475317340454
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +345,7 @@ GameObject:
   - component: {fileID: 2333815297390754798}
   - component: {fileID: 4280044232059369622}
   - component: {fileID: 8384699090298731618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FireParticals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5055,7 +5041,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6302911182799534504}
+  - component: {fileID: 3346881249452735400}
   - component: {fileID: 2626566547963895405}
+  - component: {fileID: 4094992534380623105}
   m_Layer: 0
   m_Name: InfectableCollision
   m_TagString: Untagged
@@ -5080,6 +5068,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3346881249452735400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302911182799534508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2626566547963895405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5096,6 +5097,20 @@ MonoBehaviour:
   childOffObj: {fileID: 6370729275233696607}
   childInfectableObj: {fileID: 4552794012545903523}
   childFireWallObj: {fileID: 2173699280441041118}
+--- !u!114 &4094992534380623105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302911182799534508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95394d89b82d45d49a25c39d39099942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  pausableObject: {fileID: 0}
 --- !u!1 &6370729275233696607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,7 +5123,7 @@ GameObject:
   - component: {fileID: 7261710667352243748}
   - component: {fileID: 6582371703181260205}
   - component: {fileID: 4151336427820846005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OffBlock
   m_TagString: OffObject
   m_Icon: {fileID: 0}

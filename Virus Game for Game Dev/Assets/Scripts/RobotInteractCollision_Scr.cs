@@ -9,30 +9,33 @@ public class RobotInteractCollision_Scr : MonoBehaviour
     public GameObject mainParentObject;
 
     //Check Triggers
-    /*private void OnTriggerStay(Collider otherObject)
+    private void OnTriggerStay(Collider otherObject)
     {
         if (mainParentObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Clean)
         {
-            if (((otherObject.gameObject.tag == "Robot" &&
-                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected) || 
-                otherObject.gameObject.tag == "InfectableObjectCollision") && 
-                mainParentObject.GetComponent<RobotStates_Scr>().canAttack == true)
+            if (otherObject.GetComponent<RobotStates_Scr>() != null)
             {
-                if (attackDelay <= 0)
+                if (((otherObject.gameObject.tag == "Robot" &&
+                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected) ||
+                otherObject.gameObject.tag == "InfectableObjectCollision") &&
+                mainParentObject.GetComponent<RobotStates_Scr>().canAttack == true)
                 {
-                    if (otherObject.gameObject.tag == "Robot")
+                    if (attackDelay <= 0)
                     {
-                        otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
+                        if (otherObject.gameObject.tag == "Robot")
+                        {
+                            otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
+                        }
+                        else if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                        {
+                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Firewall;
+                        }
+                        attackDelay = attackDelayReset;
                     }
-                    else if (otherObject.gameObject.tag == "InfectableObjectCollision")
+                    else
                     {
-                        otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Firewall;
+                        attackDelay -= 1;
                     }
-                    attackDelay = attackDelayReset;
-                }
-                else
-                {
-                    attackDelay -= 1;
                 }
             }
         }
@@ -45,5 +48,5 @@ public class RobotInteractCollision_Scr : MonoBehaviour
                 attackDelay = attackDelayReset;
             }
      
-    }*/
+    }
 }

@@ -35,27 +35,5 @@ public class RobotStates_Scr : MonoBehaviour
                 playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
             }
         }
-
-
     }
-
-   
-
-    //Check Triggers
-    /*private void OnTriggerStay(Collider otherObject)
-	{
-        if (otherObject.gameObject.tag == "Player")
-        {
-            myRobotStatusSt = RobotStatusStates.Infected;
-            myRobotModeSt = RobotModeStates.Move;
-        }
-    }
-
-    private void OnTriggerExit(Collider otherObject)
-	{
-        if (otherObject.gameObject.tag == "Player")
-        {
-            myRobotModeSt = RobotModeStates.Idle;
-        }
-    }*/
 }

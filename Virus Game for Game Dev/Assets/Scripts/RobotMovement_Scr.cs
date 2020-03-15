@@ -35,22 +35,22 @@ public class RobotMovement_Scr : MonoBehaviour
                 break;
                 
                 case RobotStates_Scr.RobotStatusStates.Infected:                
-                    if (Input.GetKey(KeyCode.W))// && playerCollisionCheck.North == false) 
+                    if (Input.GetKey(KeyCode.W))
                     {
                         MoveNorth();
                     }
                     
-                    if (Input.GetKey(KeyCode.D))// && playerCollisionCheck.East == false) 
+                    if (Input.GetKey(KeyCode.D))
                     {
                         MoveEast();
                     }
 
-                    if (Input.GetKey(KeyCode.S))// && playerCollisionCheck.South == false) 
+                    if (Input.GetKey(KeyCode.S))
                     {
                         MoveSouth();
                     }
                     
-                    if (Input.GetKey(KeyCode.A))// && playerCollisionCheck.West == false) 
+                    if (Input.GetKey(KeyCode.A))
                     {
                         MoveWest();
                     }
