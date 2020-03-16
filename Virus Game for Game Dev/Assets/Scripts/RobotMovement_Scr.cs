@@ -13,13 +13,6 @@ public class RobotMovement_Scr : MonoBehaviour
     public float rotationSpeed = 5; //move speed
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (GetComponent<RobotStates_Scr>().myRobotModeSt == RobotStates_Scr.RobotModeStates.Move)
@@ -35,22 +28,22 @@ public class RobotMovement_Scr : MonoBehaviour
                 break;
                 
                 case RobotStates_Scr.RobotStatusStates.Infected:                
-                    if (Input.GetKey(KeyCode.W))
+                    if (Input.GetAxis("Vertical") > 0)
                     {
                         MoveNorth();
                     }
                     
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetAxis("Horizontal") > 0)
                     {
                         MoveEast();
                     }
 
-                    if (Input.GetKey(KeyCode.S))
+                    if (Input.GetAxis("Vertical") < 0)
                     {
                         MoveSouth();
                     }
                     
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetAxis("Horizontal") < 0)
                     {
                         MoveWest();
                     }

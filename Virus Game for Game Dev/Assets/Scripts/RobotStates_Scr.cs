@@ -13,6 +13,8 @@ public class RobotStates_Scr : MonoBehaviour
     public GameObject objectGeo;
     public GameObject playerObject;
 
+    public Create_FloatVariable backupCounter;
+
 
 
     private void Update()
@@ -33,6 +35,7 @@ public class RobotStates_Scr : MonoBehaviour
             if (playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Contains(this.gameObject))
             {
                 playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
+                backupCounter.value = playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Count;
             }
         }
     }

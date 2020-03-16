@@ -389,6 +389,7 @@ MonoBehaviour:
   myRobotModeSt: 0
   objectGeo: {fileID: 3013552093669474831}
   playerObject: {fileID: 0}
+  backupCounter: {fileID: 11400000, guid: fe3ed82f5cc5c1e4182e3fc88cae1918, type: 2}
 --- !u!114 &2091989455258605036
 MonoBehaviour:
   m_ObjectHideFlags: 0

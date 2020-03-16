@@ -11,6 +11,7 @@ public class DoorStates_Scr : MonoBehaviour
 
     public GameObject playerObject;
     public GameObject geoToColor;
+    //public Shader shaderToChange;
 
     public GameObject childOpenObj;
     public GameObject childCloseObj;
@@ -56,16 +57,6 @@ public class DoorStates_Scr : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider otherObject)
-    {
-        if ((DoorOpen == false) && (
-            otherObject.gameObject.tag == "Player" ||
-            otherObject.gameObject.tag == "Robot" ||
-            otherObject.gameObject.tag == "Human"))
-        {
-            OpenDoor();
-        }
-    }
 
     void OpenDoor()
     {

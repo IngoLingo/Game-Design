@@ -26,22 +26,22 @@ public class PlayerStates_Scr : MonoBehaviour
     {
         if (myPlayerModeSt == PlayerModeStates.Object)
         {
-            if (Input.GetKey(KeyCode.W) && playerCollisionCheck.North == false) 
+            if (Input.GetAxis("Vertical") > 0 && playerCollisionCheck.North == false) 
             {
                 MoveNorth();
             }
             
-            if (Input.GetKey(KeyCode.D) && playerCollisionCheck.East == false) 
+            if (Input.GetAxis("Horizontal") > 0 && playerCollisionCheck.East == false) 
             {
                 MoveEast();
             }
 
-            if (Input.GetKey(KeyCode.S) && playerCollisionCheck.South == false) 
+            if (Input.GetAxis("Vertical") < 0 && playerCollisionCheck.South == false) 
             {
                 MoveSouth();
             }
             
-            if (Input.GetKey(KeyCode.A) && playerCollisionCheck.West == false) 
+            if (Input.GetAxis("Horizontal") < 0 && playerCollisionCheck.West == false) 
             {
                 MoveWest();
             }

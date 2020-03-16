@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 352557091799215849}
   - component: {fileID: 2382223385893076131}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: PlayerDeathCollisionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,6 +439,7 @@ MonoBehaviour:
   mainParentObject: {fileID: 5072053012301561069}
   gameOverUI: {fileID: 0}
   whatIsPaused: {fileID: 0}
+  backupCounter: {fileID: 11400000, guid: fe3ed82f5cc5c1e4182e3fc88cae1918, type: 2}
 --- !u!1 &7725883327784501874
 GameObject:
   m_ObjectHideFlags: 0

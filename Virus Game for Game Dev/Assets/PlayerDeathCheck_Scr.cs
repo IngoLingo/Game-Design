@@ -10,7 +10,12 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject whatIsPaused;
 
-    // Start is called before the first frame update
+    public Create_FloatVariable backupCounter;
+
+    private void Start()
+    {
+        backupCounter.value = backupList.Count;
+    }
     void Update()
     {
         if(GetComponentInParent<PlayerStates_Scr>().myPlayerStatusSt == PlayerStates_Scr.PlayerStatusStates.Dead)
@@ -44,6 +49,7 @@ public class PlayerDeathCheck_Scr : MonoBehaviour
                 if (!backupList.Contains(otherObject.gameObject))
                 {
                     backupList.Add(otherObject.gameObject);
+                    backupCounter.value = backupList.Count;
                 }
             }
         }
