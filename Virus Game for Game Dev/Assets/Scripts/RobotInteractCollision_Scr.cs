@@ -44,9 +44,9 @@ public class RobotInteractCollision_Scr : MonoBehaviour
     private void OnTriggerExit(Collider otherObject)
     {
         if (otherObject.gameObject.tag == "Robot" || otherObject.gameObject.tag == "InfectableObjectCollision")
-            {
-                attackDelay = attackDelayReset;
-            }
+        {
+            attackDelay = attackDelayReset;
+        }
      
     }
 }

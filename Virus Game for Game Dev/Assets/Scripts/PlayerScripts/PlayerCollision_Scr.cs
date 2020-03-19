@@ -54,9 +54,9 @@ public class PlayerCollision_Scr : MonoBehaviour
         }
         
         //Un-collide with these objects, no mater the state
-        if (otherObject.gameObject.tag == "WallCollision" || otherObject.gameObject.tag == "OffObject") 
+        /*if (otherObject.gameObject.tag == "WallCollision" || otherObject.gameObject.tag == "OffObject") 
         {
             CollideFalseEvent.Invoke();
-        }
+        }*/
     }
 }
