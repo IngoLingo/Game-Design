@@ -13,7 +13,7 @@ public class DoorMouseClick_Scr : MonoBehaviour
     void Start()
     {
         Resume();
-        infectedCount.value = 0;
+        //infectedCount.value = 0;
     }
 
     private void OnMouseDown()
