@@ -15,27 +15,31 @@ public class RobotInteractCollision_Scr : MonoBehaviour
         {
             if (otherObject.GetComponent<RobotStates_Scr>() != null)
             {
-                if (((otherObject.gameObject.tag == "Robot" &&
-                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected) ||
-                otherObject.gameObject.tag == "InfectableObjectCollision") &&
+                if ((otherObject.gameObject.tag == "Robot" &&
+                otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt == RobotStates_Scr.RobotStatusStates.Infected) &&
                 mainParentObject.GetComponent<RobotStates_Scr>().canAttack == true)
                 {
                     if (attackDelay <= 0)
                     {
-                        if (otherObject.gameObject.tag == "Robot")
-                        {
-                            otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
-                        }
-                        else if (otherObject.gameObject.tag == "InfectableObjectCollision")
-                        {
-                            otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Firewall;
-                        }
+                        otherObject.GetComponent<RobotStates_Scr>().myRobotStatusSt = RobotStates_Scr.RobotStatusStates.Off;
                         attackDelay = attackDelayReset;
                     }
                     else
                     {
                         attackDelay -= 1;
                     }
+                }
+            }
+            if (otherObject.gameObject.tag == "InfectableObjectCollision" && mainParentObject.GetComponent<RobotStates_Scr>().canAttack == true)
+            {
+                if (attackDelay <= 0)
+                {
+                    otherObject.transform.parent.GetComponent<InfectableCollisionStates_Scr>().myObjectStatusSt = InfectableCollisionStates_Scr.ObjectStatusStates.Firewall;
+                    attackDelay = attackDelayReset;
+                }
+                else
+                {
+                    attackDelay -= 1;
                 }
             }
         }

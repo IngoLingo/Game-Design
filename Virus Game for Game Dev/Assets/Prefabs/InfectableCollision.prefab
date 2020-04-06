@@ -5112,6 +5112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
   pausableObject: {fileID: 0}
+  playerDistanceCheck: {fileID: 0}
+  distanceToOther: 1.5
 --- !u!1 &6370729275233696607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,15 +5283,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7410214811309332584, guid: 8eaa475a42fe041409c7664f49f2c68a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7410214811309332587, guid: 8eaa475a42fe041409c7664f49f2c68a,
         type: 3}
       propertyPath: needBot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410214811309332584, guid: 8eaa475a42fe041409c7664f49f2c68a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaa475a42fe041409c7664f49f2c68a, type: 3}
@@ -5376,15 +5378,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7410214811309332584, guid: 8eaa475a42fe041409c7664f49f2c68a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7410214811309332587, guid: 8eaa475a42fe041409c7664f49f2c68a,
         type: 3}
       propertyPath: needBot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410214811309332584, guid: 8eaa475a42fe041409c7664f49f2c68a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaa475a42fe041409c7664f49f2c68a, type: 3}
