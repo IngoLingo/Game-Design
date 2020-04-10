@@ -9,10 +9,11 @@ public class UnpauseForMazeGame : MonoBehaviour
     public GameObject whatIsPaused;
     public GameObject doorToUnlock;
 
-    private void OnTriggerStay2D(Collider2D otherObject)
+    private void OnTriggerStay(Collider otherObject)
 	{
         if (otherObject.gameObject.tag == "Player")
         {
+            //Debug.Log("Hit");
             Resume();
         }
     }
