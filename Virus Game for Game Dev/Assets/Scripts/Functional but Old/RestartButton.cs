@@ -8,7 +8,7 @@ public class RestartButton : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (Input.GetKey(KeyCode.O)) 
+        if (Input.GetKey(KeyCode.R)) 
         {
             Application.LoadLevel(Application.loadedLevel);
         }
