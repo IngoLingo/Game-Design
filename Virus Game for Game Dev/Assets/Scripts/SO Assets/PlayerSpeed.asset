@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSpeed
   m_EditorClassIdentifier: 
   DeveloperNotes: A rational number
-  value: 3
+  value: 4
   disableMaxValue: 0
   maxValue: 60
   disableMinValue: 0

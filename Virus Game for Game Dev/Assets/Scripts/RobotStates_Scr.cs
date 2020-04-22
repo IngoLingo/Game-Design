@@ -12,6 +12,7 @@ public class RobotStates_Scr : MonoBehaviour
     public RobotModeStates myRobotModeSt;
     public GameObject objectGeo;
     public GameObject playerObject;
+    //public GameObject humanObject;
 
     public Create_FloatVariable backupCounter;
 
@@ -32,6 +33,7 @@ public class RobotStates_Scr : MonoBehaviour
         {
             objectGeo.GetComponent<Renderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
 
+            //Player backup list
             if (playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Contains(this.gameObject))
             {
                 playerObject.GetComponentInChildren<PlayerDeathCheck_Scr>().backupList.Remove(this.gameObject);
