@@ -45,7 +45,7 @@ public class DoorStates_Scr : MonoBehaviour
         //Colors
         if (myDoorStatusSt == DoorStatusStates.Clean)
         {
-            geoToColor.GetComponent<Renderer>().material.color = new Color(1f, 0.5f, 0.5f);
+            geoToColor.GetComponent<Renderer>().material.color = new Color(0.945f, 0.628f, 0.628f);
         }
         else if (myDoorStatusSt == DoorStatusStates.Infected)
         {

@@ -23,7 +23,7 @@ public class RobotStates_Scr : MonoBehaviour
         //States
         if (myRobotStatusSt == RobotStatusStates.Clean)
         {
-            objectGeo.GetComponent<Renderer>().material.color = new Color(1f,0.5f,0.5f);
+            objectGeo.GetComponent<Renderer>().material.color = new Color(0.973f, 0.392f, 0.392f);
         }
         else if (myRobotStatusSt == RobotStatusStates.Infected)
         {

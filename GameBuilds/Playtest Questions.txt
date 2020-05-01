@@ -1,6 +1,0 @@
-Questions:
-
-1) Was it fun? If so, how fun on a scale between 0-5 (5 is the highest).
-2) Was it dificult? If so, how dificult on a scale between 0-5 (5 is the highest).
-3) Did you experience any bugs or things that felt out of place? If so, what did you find?
-4) Did the controles feel comfortable?
